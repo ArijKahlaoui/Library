@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+    <h1>Creation d'un Auteur</h1>
+
+    {{ form_start(formArticle) }}
+
+        {{form_row(formArticle.name, {'attr':{
+            'placeholder': "Nom de l'auteur"}} ) }}
+        
+        
+        {{form_row(formArticle.informations, {'attr':{
+                'placeholder': "informations sur l'auteur"}} ) }}
+
+        <br/><button type="submit" class="btn btn-success">Ajouter auteur</button>
+
+    {{ form_end(formArticle) }}
+
+{% endblock %}

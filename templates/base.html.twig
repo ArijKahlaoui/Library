@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="public/style.css">
+
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ path('home')}}">BiBliotheque</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('home')}}">Acceuil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('search')}}">Recherche</a>
+                  </li>
+
+                  {% if not app.user %}
+
+                      <li class="nav-item">
+                        <a href="{{ path('security_login')}}" class="nav-link">Connexion</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="{{ path('security_registration')}}" class="nav-link">Inscription</a>
+                      </li>
+                  {% else %}
+  
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{path('blog_create')}}">Ajouter un Livre</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{path('auteur_create')}}">Ajouter un Auteur</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ path('security_logout')}}" class="nav-link">Deconnexion</a>
+                    </li>
+                  {% endif %}
+
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+
+          <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        
+    </body>
+
+    <footer class="text-center text-white" style="background-color: #134f7c;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Images -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright: 4 éme génie informatique 
+        </div>
+        <section class="">
+          <div class="row">
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light">
+                <img
+                  src="https://media.istockphoto.com/photos/books-and-textbook-on-wooden-desk-in-library-selective-focus-piles-of-picture-id1220342382?s=612x612"
+                  class="w-100"
+                /> 
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2017/12/17/21/44/coffee-3025022_960_720.jpg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2019/05/14/21/50/storytelling-4203628_960_720.jpg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/06/02/12/59/book-794978_960_720.jpg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/07/23/01/29/books-5430104__340.jpg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2018/03/25/13/43/garbage-3259455__340.jpg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Images -->
+      </div>
+      
+      
+      
+    </footer>
+</html>

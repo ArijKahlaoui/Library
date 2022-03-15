@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <article>
+        <div id="intro" class="p-5 text-center bg-light">
+            <h1 class="mb-0 h4">{{ auteur.name }}</h1>
+        </div>
+        
+        <div class="content">
+            <hr>{{auteur.informations | raw}}
+        </div>
+
+        <hr>
+        <a href="{{ path('delete_auteur',{'id':auteur.id}) }}" class="btn btn-primary">Supprimer</a>
+    </article>
+
+{% endblock %}

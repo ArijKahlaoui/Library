@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="form-row align-items-end" >
+    <div class="col">
+        <div class="form-group">
+            {{render(controller('App\\Controller\\SearchController::searchBar'))}}
+            <button type="submit" class="btn btn-success">Rechercher</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

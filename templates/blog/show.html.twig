@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">{{ article.title }}</h1>
+    </div>
+    <main class="mt-4 mb-5">
+        <div class="container">
+          <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-8 mb-4">
+                <!--Section: Post data-mdb-->
+                <section class="border-bottom mb-4 ">
+                    <div class="col-md-4 mb-4">
+                        <div class="bg-image hover-overlay shadow-1-strong rounded ripple " data-mdb-ripple-color="light">
+                            <img src="{{ article.image }}" class="img-fluid" />
+                        </div>
+                    </div>
+        
+                    <div class="row align-items-center mb-4">
+                        <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" class="rounded-5 shadow-1-strong me-2"
+                            height="35" alt="" loading="lazy" />
+                            <span> Published: <u>{{article.createdAt | date('d/m/Y') }} à {{article.createdAt | date('H:i')}}</u><strong> by </strong>  {{ article.auteur }}</span>
+            
+                        </div>
+                    </div>
+
+                    <section>
+                        <hr>{{article.content | raw}}
+                    </section>
+                </section>
+            </div>
+        </div>
+        <a href="{{ path('delete_article',{'id':article.id}) }}" class="btn btn-primary">Supprimer</a>
+    </main>
+        
+    
+
+{% endblock %}

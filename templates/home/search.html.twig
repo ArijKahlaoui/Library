@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title%} Recherche{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+
+        <div class="form-row align-items-end" >
+            <div class="col">
+                {{ form_row(form.title) }}
+                <div class="col">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Rechercher</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ form_end(form) }}
+
+    {% if articles %}
+        <table id="articles" class="table table-striped">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>content</th>
+            <th>auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td>{{ article.title }}</td>
+                <td>{{ article.content }}</td>
+                <td>{{ article.auteur }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+        <p>Aucun articles</p>
+    {% endif %} 
+<br/>
+{% endblock %}

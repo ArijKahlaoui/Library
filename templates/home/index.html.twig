@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<main class="my-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section class="text-center">
+        <h3 class="mb-5"><strong>Bibliothèque en ligne </strong></h3>
+        <p class="note note-light">
+          <h4><strong>Vous aimez lire ? </strong></h4> <br>Vous avez envie de découvrir ou redécouvrir certains chefs d’œuvre de la littérature ? Alors ce site est fait pour vous ! Lire en ligne référence et diffuse gratuitement les œuvres littéraires libres de droits, sous forme numérique mais également sous forme audio pour certaines œuvres.
+          <br>
+          Découvrez également de nouveaux talents en lisant les textes des auteurs à découvrir de Lire en ligne !
+        </p>
+
+        <p class="note note-light">
+          <h4><strong>Publication gratuite :</strong></h4><br/> Bien plus qu'une simple bibliothèque en ligne, Lire en ligne a pour vocation d'encourager les nouveaux auteurs en les aidant à promouvoir leur talent d'écriture. Nous vous offrons ainsi la possibilité de publier vos œuvres en ligne, de manière totalement gratuite.
+          <br/>
+          
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Livres</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="{{ path('blog')}}" class="btn btn-primary">Read</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://media.istockphoto.com/photos/writing-in-notebook-closeup-picture-id1080259016?s=612x612" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Auteurs</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+                <a href="{{ path('auteur')}}" class="btn btn-primary">Read</a>
+              </div>
+            </div>
+          </div>
+
+          <h1>Bonne lecture à tous...</h1>
+
+{% endblock %}
